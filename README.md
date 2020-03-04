@@ -1,1 +1,2 @@
 # nerds
+Учебный макет htmlacademy
