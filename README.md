@@ -1,3 +1,2 @@
 # nerds
-Учебный макет htmlacademy
-(html, css)
+Учебный макет htmlacademy (html, scss, js, сборка gulp)
