@@ -1,0 +1,19 @@
+.map {
+  margin: 59px auto 0;
+  width: 1440px;
+  min-height: 417px;
+  position: relative;
+  background-image: url('../img/content/map.png');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 90px;
+    left: 820px;
+    width: 231px;
+    height: 190px;
+    background-image: url('../img/content/map-marker.png');
+  }
+}

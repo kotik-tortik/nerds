@@ -1,0 +1,48 @@
+.contact-block {
+  padding: 49px 50px 46px;
+  width: 319px;
+  min-height: 308px;
+  position: absolute;
+  top: 55px;
+  left: 140px;
+  background-color: $white;
+  box-sizing: border-box;
+}
+
+.contact-block__header {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.contact-block__address {
+  margin-top: 23px;
+  line-height: 18px;
+  color: $grey4;
+}
+
+.contact-block__phone {
+  margin-top: 19px;
+  line-height: 18px;
+  color: $grey4;
+}
+
+.contact-block__button {
+  margin-top: 36px;
+  width: 219px;
+  min-height: 50px;
+  padding: 14px 0 12px;
+  background-color: $red;
+  @include button;
+
+  &:hover {
+    background-color: $red2;
+  }
+
+  &:active {
+    color: $white2;
+    background-color: $red3;
+    box-shadow: 0px 3px $black-shadow inset;
+  }
+}

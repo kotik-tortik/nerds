@@ -1,0 +1,74 @@
+.services {
+  padding-top: 80px;
+}
+
+.services__list {
+  padding: 0 60px 80px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: $grey2 solid 2px;
+}
+
+.services__item-header {
+  margin-top: 18px;
+  margin-bottom: 17px;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+}
+
+.services__item-description {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #283136;
+}
+
+.services__item-btn {
+  width: 160px;
+  margin-top: 32px;
+  padding: 17px 0 13px;
+  @include button;
+
+  &--left {
+    background-color: $red;
+
+    &:hover {
+      background-color: $red2;
+    }
+
+    &:active {
+      background-color: $red3;
+    }
+  }
+
+  &--center {
+    background-color: $green;
+
+    &:hover {
+      background-color: $green2;
+    }
+
+    &:active {
+      background-color: $green3;
+    }
+  }
+
+  &--right {
+    background-color: $yellow;
+
+    &:hover {
+      background-color: $yellow2;
+    }
+
+    &:active {
+      background-color: $yellow3;
+    }
+  }
+
+  &:active {
+    color: $white2;
+    box-shadow: 0 3px $black-shadow inset;
+  }
+}

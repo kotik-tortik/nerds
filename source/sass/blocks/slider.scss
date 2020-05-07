@@ -1,0 +1,120 @@
+.slider {
+  position: relative;
+  background-color: $grey2;
+}
+
+.slider__radio-btn {
+  display: none;
+}
+
+.slider__navigation-list {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: 88px;
+  z-index: 1;
+  min-width: 105px;
+  min-height: 18px;
+  font-size: 0;
+  transform: translateX(-50%);
+}
+
+.slider__navigation-item {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  padding: 8px;
+  cursor: pointer;
+
+  &:not(:last-child) {
+    padding-right: 9px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background-color: $white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+  }
+}
+
+
+.slider__navigation-circle {
+  
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    background-color: $white;
+    border: 2px solid $grey3;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+}
+
+.slider__slides-item {
+  display: none;
+  padding: 72px 0 80px 0;
+  background-repeat: no-repeat;
+
+  &--first {
+    background-image: url("../img/content/slide1.png");
+    background-position: 431px 11px;
+  }
+
+  &--second {
+    background-image: url("../img/content/slide2.png");
+    background-position: 100% 0;
+  }
+
+  &--third {
+    background-image: url("../img/content/slide3.png");
+    background-position: 100% 20px;
+  }
+}
+
+.slider-show {
+  display: block;
+}
+
+.slider__slides-item-header {
+  max-width: 600px;
+  font-size: 55px;
+  line-height: 55px;
+  font-weight: 500;
+}
+
+.slider__slides-item-description {
+  margin-top: 26px;
+  max-width: 430px;
+  line-height: 24px;
+  color: $black2;
+}
+
+.slider__slides-item-btn {
+  margin-top: 38px;
+  width: 240px;
+  padding: 17px 0 14px;
+  background-color: $red;
+  @include button;
+
+  &:hover {
+    background-color: $red2;
+  }
+
+  &:active {
+    color: $white2;
+    background-color: $red3;
+    box-shadow: 0 3px $black-shadow inset;
+  }
+}

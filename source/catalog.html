@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Каталог Nerd`s</title>
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="preload" href="fonts/Roboto.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/Robotomedium.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/Robotobold.woff2" as="font" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="header__navigation container">
+        <a class="header__logo" href="index.html" aria-label="Логотип студии">
+          <svg class="header__svg" height="65px" width="160px">
+            <use xlink:href="/img/svg/sprite.svg#nerds-logo"></use>
+          </svg>
+        </a>
+        <ul class="header__navigation-list">
+          <li class="header__navigation-item">
+            <a class="header__navigation-link" href="#">Студия</a>
+          </li>
+          <li class="header__navigation-item">
+            <a class="header__navigation-link" href="#">Клиенты</a>
+          </li>
+          <li class="header__navigation-item">
+            <a class="header__navigation-link current" href="catalog.html">Магазин</a>
+          </li>
+          <li class="header__navigation-item">
+            <a class="header__navigation-link" href="#">Контакты</a>
+          </li>
+        </ul>
+        <a class="header__basket-link" href="#">Корзина</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="shop">
+        <h1 class="shop__header">Магазин готовых шаблонов</h1>
+        <div class="shop__container container">
+          <form class="shop__filter filter" action="http://echo.htmlacademy.ru" method="get">
+            <fieldset class="filter__range">
+              <legend class="filter__range-heading">Стоимость:</legend>
+              <div class="filter__range-wrapper">
+                <div class="filter__range-controls">
+                  <div class="filter__range-scale">
+                    <div class="filter__range-bar"></div>
+                    <div class="filter__range-toggle filter__range-toggle--min"></div>
+                    <div class="filter__range-toggle filter__range-toggle--max"></div>
+                  </div>
+                </div>
+                <div class="filter__price-fields">
+                  <label class="filter__price-fields-label" for="min-price">от</label>
+                  <input class="filter__price-fields-input filter__price-fields-input--min" id="min-price" name="min-price" type="number" placeholder="0" min="0" max="21000" value="0">
+                  <label class="filter__price-fields-label" for="max-price">до</label>
+                  <input class="filter__price-fields-input filter__price-fields-input--max" id="max-price" name="max-price" type="number" placeholder="15 000" min="0" max="21000" value="15000">
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="filter__adaptive">
+              <legend class="filter__adaptive-heading">Сетка:</legend>
+              <input class="filter__adaptive-radio-btn" type="radio" name="toggle" value="adaptive" id="adaptive" checked>
+              <input class="filter__adaptive-radio-btn" type="radio" name="toggle" value="notadaptive" id="notadaptive">
+              <div class="filter__adaptive-controls">
+                <label class="filter__adaptive-controls-btn filter__adaptive-controls-btn--checked" for="adaptive">Адаптивная</label>
+                <label class="filter__adaptive-controls-btn" for="notadaptive">Неадаптивная</label>
+              </div>
+            </fieldset>
+            <fieldset class="filter__grid">
+              <input class="filter__grid-radio-btn" type="radio" name="toggle" value="fixed" id="fixed" checked>
+              <input class="filter__grid-radio-btn" type="radio" name="toggle" value="rubber" id="rubber">
+              <div class="filter__grid-controls">
+                <label class="filter__grid-controls-btn filter__grid-controls-btn--checked" for="fixed">Фиксированная</label>
+                <label class="filter__grid-controls-btn" for="rubber">Резиновая</label>
+              </div>
+            </fieldset>
+            <fieldset class="filter__features">
+              <legend class="filter__features-heading">Особенности:</legend>
+              <input class="filter__features-checkbox" type="checkbox" name="checkbox" id="slider" value="slider" checked>
+              <input class="filter__features-checkbox" type="checkbox" name="checkbox" id="advantages" value="advantages">
+              <input class="filter__features-checkbox" type="checkbox" name="checkbox" id="news" value="news" checked>
+              <input class="filter__features-checkbox" type="checkbox" name="checkbox" id="gallery" value="gallery">
+              <input class="filter__features-checkbox" type="checkbox" name="checkbox" id="basket" value="basket">
+              <div class="filter__features-controls">
+                <label class="filter__features-controls-btn filter__features-controls-btn--checked" for="slider">Слайдер</label>
+                <label class="filter__features-controls-btn" for="advantages">Блок преимуществ</label>
+                <label class="filter__features-controls-btn filter__features-controls-btn--checked" for="news">Новости</label>
+                <label class="filter__features-controls-btn" for="gallery">Галерея</label>
+                <label class="filter__features-controls-btn" for="basket">Корзина</label>
+              </div>
+            </fieldset>
+            <button class="filter__submit-btn" type="submit">Показать</button>
+            <button class="filter__reset-btn" type="reset">Сброс</button>
+          </form>
+          <div class="shop__products products">
+            <div class="products__sorting">
+              <h2 class="products__sorting-header">Сортировать:</h2>
+              <div class="products__sorting-options">
+                <p class="products__sorting-option products__sorting-option--active" id="priceSorting">По цене</p>
+                <p class="products__sorting-option" id="nameSorting">По названию</p>
+                <div class="products__sorting-controls">
+                  <div class="products__sorting-arrow products__sorting-arrow--down products__sorting-arrow--active"></div>
+                  <div class="products__sorting-arrow products__sorting-arrow--up"></div>
+                </div>
+              </div>
+            </div>
+            <div class="products__cards">
+            </div>
+            <template class="card-template">
+              <div class="products__card">
+                <div class="products__card-cap">
+                  <ul class="products__card-decor-list">
+                    <li class="products__card-decor-item"></li>
+                    <li class="products__card-decor-item"></li>
+                    <li class="products__card-decor-item"></li>
+                  </ul>
+                </div>
+                <img class="products__card-image" src="#" alt="#" width="360" height="576">
+                <div class="products__card-hover-block">
+                  <a class="products__card-link" href="#"></a>
+                  <p class="products__card-description"></p>
+                  <button class="products__card-btn"></button>
+                </div>
+              </div>
+            </template>
+            <div class="products__pagination">
+              <button class="products__pagination-btn products__pagination-btn--active">1</button>
+              <button class="products__pagination-btn">2</button>
+              <button class="products__pagination-btn">3</button>
+              <button class="products__pagination-btn products__pagination-btn--text">Следующая</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="map">
+        <h2 class="map__header visually-hidden">Карта с указанием местоположения студии</h2>
+        <div class="map__contact-block contact-block">
+          <h3 class="contact-block__additional-header visually-hidden">Контактная Информация</h3>
+          <h4 class="contact-block__header" >Nёrds design studio</h4>
+          <p class="contact-block__address">191186, Санкт-Петербург,<br>ул. Б. Конюшенная, д. 19/8</p>
+          <p class="contact-block__phone">тел. +7 (812) 275-75-75</p>
+          <button class="contact-block__button">Напишите нам</button>
+        </div>
+        <div class="map__popup popup">
+          <h2 class="popup__header">Напишите нам</h2>
+          <div class="popup__cross-icon" tabindex="0"></div>
+          <form class="popup__form" action="#" method="post">
+            <div class="popup__name-wrapper">
+              <label class="popup__name-label" for="name">Ваше имя:</label>
+              <input class="popup__name-input" type="text" name="name" id="name" placeholder="Имя Фамилия" required>
+            </div>
+            <div class="popup__email-wrapper">
+              <label class="popup__email-label" for="email">Ваш e-mail:</label>
+              <input class="popup__email-input" type="email" name="email" id="email" placeholder="email@example.com" required>
+            </div>
+            <div class="popup__textarea-wrapper">
+              <label class="popup__textarea-label" for="text">Текст письма:</label>
+              <textarea class="popup__textarea-input" name="text" id="text" cols="30" rows="3" placeholder="В свободной форме" required></textarea>
+            </div>
+            <button class="popup__button" type="submit">Отправить</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <ul class="footer__social-list">
+        <li class="footer__social-item">
+          <a class="footer__social-link footer__social-link--vk" href="#" target="_blank" aria-label="Ссылка Вконтакте">
+            <svg class="footer__social-svg" width="26px" height="15px">
+              <use xlink:href="/img/svg/sprite.svg#vk-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a class="footer__social-link footer__social-link--facebook" href="#" target="_blank" aria-label="Ссылка Фейсбук">
+            <svg class="footer__social-svg" width="12px" height="22px">
+              <use xlink:href="/img/svg/sprite.svg#fb-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer__social-item">
+          <a class="footer__social-link footer__social-link--instagram" href="#" target="_blank" aria-label="Ссылка Инстаграм">
+            <svg class="footer__social-svg" width="21px" height="21px">
+              <use xlink:href="/img/svg/sprite.svg#insta-icon"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+      <ul class="footer__discount-block">
+        <li class="footer__discount-block-header">Давайте дружить, это выгодно!</li>
+        <li class="footer__discount-block-text">Скидка 10% для друзей из социальных сетей.</li>
+      </ul>
+    </footer>
+    <script src="js/svguse.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/render_cards.js"></script>
+    <script src="js/sorting.js"></script>
+    <script src="js/filter.js"></script>
+  </body>
+</html>

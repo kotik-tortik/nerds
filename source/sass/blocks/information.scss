@@ -1,0 +1,132 @@
+.information {
+  padding-bottom: 73px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: $grey2 solid 2px;
+}
+
+.information__offer-block {
+  width: 660px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.information__offer-header {
+  margin-top: 74px;
+  margin-bottom: 33px;
+  font-size: 45px;
+  line-height: 45px;
+  font-weight: 500;
+}
+
+.information__offer-description {
+  margin-bottom: 39px;
+  color: $black2;
+}
+
+.information__offer-order-header {
+  margin-bottom: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.information__offer-list {
+  padding-left: 36px;
+}
+
+.information__offer-item {
+  position: relative;
+  color: $black2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: -35px;
+    width: 25px;
+    height: 2px;
+    background-color: $red;
+  }
+
+  &:not(:nth-child(1)) {
+    margin-top: 24px;
+  }
+}
+
+.information__advantages-block {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.information__advantages-image {
+  margin: 40px 0 36px 0;
+}
+
+.information__advantages-description {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+}
+
+.information__advantages-list {
+  margin-top: 44px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.information__advantages-item {
+
+  &:nth-child(1) {
+    margin-right: 19px;
+  }
+
+  &:nth-child(2) {
+    margin-right: 20px;
+  }
+
+  &:nth-child(3) {
+
+    .information__advantages-inner-item--number {
+
+      &::after {
+        left: 50px;
+      }
+    }
+  }
+}
+
+.information__advantages-inner-item {
+  max-width: 100px;
+  display: flex;
+  flex-direction: column;
+
+  &--number {
+    position: relative;
+    align-self: left;
+    font-size: 44px;
+    line-height: 40px;
+    font-weight: 700;
+    letter-spacing: 1pt;
+
+    &::after {
+      content: "%";
+      width: 10px;
+      position: absolute;
+      top: -9px;
+      left: 77px;
+      height: 10px;
+      font-size: 27px;
+      font-weight: 500;
+    }
+  }
+  
+  &--text {
+    margin-top: 22px;
+    font-size: 16px;
+    line-height: 18px;
+    color: $black2;
+  }
+}

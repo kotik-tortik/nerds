@@ -1,0 +1,142 @@
+.popup {
+  padding: 68px 100px 0 100px;
+  width: 960px;
+  min-height: 590px;
+  display: none;
+  position: absolute;
+  top: -136px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  background-color: $white;
+  box-shadow: 0px 20px 35px 0px $black-shadow2;
+  box-sizing: border-box;
+}
+
+.popup-show {
+  display: block;
+}
+
+.popup__header {
+  font-size: 45px;
+  font-weight: 500;
+  line-height: 45px;
+}
+
+.popup__cross-icon {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  top: 78px;
+  right: 90px;
+  background-image: url('../img/svg/close-icon.svg');
+  opacity: 0.4;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+}
+
+.popup__form {
+  margin-top: 37px;
+  width: 760px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.popup__name-wrapper {
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__email-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__textarea-wrapper {
+  margin-top: 31px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__name-label,
+.popup__email-label,
+.popup__textarea-label {
+  font-weight: 700;
+}
+
+.popup__name-input {
+  width: 343px;
+  margin-top: 6px;
+  padding: 14px 0 14px 13px;
+  border: $grey6 2px solid;
+  border-radius: 2px;
+}
+
+.popup__email-input {
+  width: 343px;
+  margin-top: 6px;
+  padding: 14px 0 14px 13px;
+  border: $grey6 2px solid;
+  border-radius: 2px;
+}
+
+.popup__textarea-input {
+  margin-top: 6px;
+  padding-top: 5px;
+  padding-left: 13px;
+  width: 742px;
+  min-height: 109px;
+  line-height: 30px;
+  border: $grey6 2px solid;
+  border-radius: 2px;
+  resize: none;
+}
+
+.popup__button {
+  margin-top: 48px;
+  width: 260px;
+  padding: 15px 0;
+  color: $white;
+  background-color: $red;
+  @include button;
+
+  &:hover {
+    background-color: $red2;
+  }
+
+  &:active {
+    color: $white2;
+    background-color: $red3;
+    box-shadow: 0 3px $black-shadow inset;
+  }
+}
+
+.popup__name-input,
+.popup__email-input,
+.popup__textarea-input {
+
+  &:hover {
+    border-color: $grey5;
+  }
+
+  &:focus,
+  &:active,
+  &:valid {
+    border-color: $black;
+    outline: none;
+  }
+
+  &:focus:required:invalid {
+    color: $red2;
+    border-color: $red2;
+  }
+}
