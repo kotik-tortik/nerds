@@ -1,6 +1,7 @@
+'use strict';
+
 (function() {
   if (document.querySelector('.slider')) {
-    'use strict';
     const controlsList = document.querySelector('.slider__navigation-list');
     const changeSlideButtons = document.querySelectorAll('.slider__navigation-item');
     const slides = document.querySelectorAll('.slider__slides-item');

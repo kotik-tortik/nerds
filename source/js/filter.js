@@ -1,7 +1,7 @@
+'use strict';
 
 (function() {
   if (document.querySelector('.filter')) {
-    'use strict';
     const filter = document.querySelector('.filter');
     const minPrice = filter.querySelector('.filter__price-fields-input--min');
     const maxPrice = filter.querySelector('.filter__price-fields-input--max');
@@ -70,7 +70,7 @@
     });
 
     const inputs = filter.querySelectorAll('.filter__price-fields-input');
-    arr = Array.from(rangeBtn);
+    const arr = Array.from(rangeBtn);
     arr[0].style.left = '0px';
     arr[1].style.left = '142px';
     
@@ -87,7 +87,7 @@
         const maxCoord = Math.round(rangeScale.getBoundingClientRect().right - rangeBtnWidth);
         const maxInputValue = 21000;
 
-        index = arr.indexOf(item);
+        let index = arr.indexOf(item);
         
         function onMouseMove(moveEvt) {
           let shift = startCoord - moveEvt.clientX;

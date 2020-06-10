@@ -1,5 +1,6 @@
+'use strict';
+
 (function() {
-  'use strict';
   if (document.querySelector('.products__sorting')) {
     const sortingBlock = document.querySelector('.products__sorting');
     const sortByPriceBtn = sortingBlock.querySelector('#priceSorting');

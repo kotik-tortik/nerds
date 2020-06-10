@@ -1,6 +1,7 @@
+'use strict';
+
 (function() {
   if (document.querySelector(".popup")) {
-    'use strict';
     const popup = document.querySelector(".popup");
     const popupOpenButton = document.querySelector(".contact-block__button");
     const popupCloseButton = popup.querySelector(".popup__cross-icon");
